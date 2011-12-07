@@ -5,3 +5,21 @@
  *= require_self
  *= require_tree . 
 */
+
+.tabela_adm{
+  border-width: 2px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-color: gray;
+	border-collapse: separate;
+	background-color: white;
+}
+
+.tabela_adm td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}

@@ -1,0 +1,29 @@
+<h1>Listando clientes</h1>
+
+<table class="tabela_adm">
+  <tr>
+    <th>Nome</th>
+    <th>Contato</th>
+    <th>Telefone</th>
+    <th>Celular</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clients.each do |client| %>
+  <tr>
+    <td><%= client.name %></td>
+    <td><%= client.contact_name %></td>
+    <td><%= client.phone %></td>
+    <td><%= client.mobile %></td>
+    <td><%= link_to 'Mostrar', client %></td>
+    <td><%= link_to 'Alterar', edit_client_path(client) %></td>
+    <td><%= link_to 'Excluir', client, confirm: 'Tem certeza ?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'novo cliente', new_client_path %>

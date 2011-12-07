@@ -1,0 +1,13 @@
+Tabela de preços
+
+%table
+  %tr
+    %th Nome
+    %th
+    %th
+    %th
+  - @table_prices.each do |tp|
+    %tr
+      %td= tp.name
+      
+= link_to "nova tabela", new_table_price_path(:client_id => @client.id)
