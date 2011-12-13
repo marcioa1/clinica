@@ -1,5 +1,7 @@
 class TableItemsController < ApplicationController
 
+  before_filter :retrieve_client
+
   def new
   end
 

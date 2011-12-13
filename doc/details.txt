@@ -1,0 +1,1 @@
+scp config/database.yml root@68.233.11.17:/home/clinica/clinica/current/config/database.yml

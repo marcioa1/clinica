@@ -1,4 +1,10 @@
-Itens da tabela 
-= @table_price.name
+%section#header
+  Itens da tabela 
+  = @table_price.name
 
-= render :partial => '/table_items/form'
+%section#table_item_form
+  = render :partial => '/table_items/form'
+  
+%section#table_price_content
+  -@table_price.table_items.each do |item|
+    

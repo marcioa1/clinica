@@ -1,7 +1,8 @@
 class TablePricesController < ApplicationController
   
   before_filter :authenticate_user!
-  
+  before_filter :retrieve_client
+
   # GET /table_prices
   # GET /table_prices.json
   def index
