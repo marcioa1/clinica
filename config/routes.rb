@@ -1,7 +1,11 @@
 Clinica::Application.routes.draw do
 
   resources :clients
-  resources :table_prices
+  resources :table_prices do
+    # resources :table_items
+  end
+    resources :table_items
+  
 
   devise_for :users
 

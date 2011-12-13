@@ -9,5 +9,7 @@ Tabela de preços
   - @table_prices.each do |tp|
     %tr
       %td= tp.name
+      %td= link_to "itens da tabela", tp
+      %td= link_to "editar", edit_table_price_path(tp)
       
 = link_to "nova tabela", new_table_price_path(:client_id => @client.id)

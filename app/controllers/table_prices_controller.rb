@@ -17,6 +17,7 @@ class TablePricesController < ApplicationController
   # GET /table_prices/1.json
   def show
     @table_price = TablePrice.find(params[:id])
+    @table_item  = TableItem.new(:table_price_id => @table_price.id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -64,7 +65,7 @@ class TablePricesController < ApplicationController
 
     respond_to do |format|
       if @table_price.update_attributes(params[:table_price])
-        format.html { redirect_to @table_price, notice: 'Table price was successfully updated.' }
+        format.html { redirect_to table_prices_path, notice: 'Table price was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

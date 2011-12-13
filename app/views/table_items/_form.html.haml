@@ -1,0 +1,21 @@
+= form_for(@table_item) do |f| 
+  - if @table_item.errors.any? 
+    #error_explanation
+      %h2
+        = pluralize(@table_item.errors.count, "error")  
+        prohibited this table_item from being saved:
+
+      %ul
+        - @table_item.errors.full_messages.each do |msg| 
+          %li
+            = msg 
+  = f.hidden_field :table_price_id
+  .field
+    = f.label :description 
+    = f.text_field :description
+  .field
+    = f.label :price 
+    = f.text_field :price 
+ 
+  .actions
+    = f.submit 'salvar'

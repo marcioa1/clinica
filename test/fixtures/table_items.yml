@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  table_price_id: 1
+  description: MyString
+  price: 9.99
+
+two:
+  table_price_id: 1
+  description: MyString
+  price: 9.99
