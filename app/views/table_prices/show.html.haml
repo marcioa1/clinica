@@ -6,5 +6,20 @@
   = render :partial => '/table_items/form'
   
 %section#table_price_content
-  -@table_price.table_items.each do |item|
-    
+  %table
+    %tr
+      %th Descrição
+      %th Preço
+      %th
+    - @table_price.table_items.each do |item|
+      %tr{:id=>"item_#{item.id}"}
+        %td{:id=>"description_#{item.id}"}= item.description
+        %td{:id=>"price_#{item.id}"}= item.price
+        %td= link_to_function "alterar", "new_method_form('put', #{item.id});"
+        
+:javascript
+  function new_method_form(type, id) {
+    $("form").attr('method', type);
+    $("#table_item_description").val($("#description_" + id).html());
+    $("#table_item_price").val($("#price_" + id).html());
+  }
